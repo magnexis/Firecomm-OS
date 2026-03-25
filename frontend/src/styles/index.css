@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    font-family: "Rajdhani", "Segoe UI", sans-serif;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(234, 88, 12, 0.09), transparent 40%),
+      radial-gradient(circle at 85% 0%, rgba(37, 99, 235, 0.08), transparent 35%),
+      #050b14;
+    color: #f8fafc;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+  }
+}
+
+@layer components {
+  .message-emergency {
+    animation: emergency-flash 1s ease-in-out infinite;
+    border-left: 3px solid #dc2626;
+  }
+
+  .message-priority {
+    border-left: 3px solid #f59e0b;
+  }
+
+  .btn-primary {
+    @apply bg-fire-600 hover:bg-fire-700 text-white font-semibold py-2 px-4 transition-colors duration-150;
+  }
+
+  .btn-secondary {
+    @apply bg-dark-700 hover:bg-dark-600 text-white font-semibold py-2 px-4 transition-colors duration-150;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 transition-colors duration-150;
+  }
+
+  .input-field {
+    @apply bg-dark-800 border border-dark-600 text-white px-3 py-2 focus:outline-none focus:border-fire-500 focus:ring-1 focus:ring-fire-500 transition-colors duration-150;
+  }
+
+  .leaflet-container {
+    background: #0b1628;
+  }
+}
