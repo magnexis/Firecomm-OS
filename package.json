@@ -2,7 +2,7 @@
   "name": "firecomm-os",
   "version": "1.0.0",
   "description": "Real-time LAN communication system for fire stations",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev:backend": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm run dev",
