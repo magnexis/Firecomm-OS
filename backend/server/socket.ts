@@ -586,6 +586,11 @@ export function setupSocket(
           return;
         }
 
+        if (!isDispatch(user) && user.role !== "command") {
+          if (callback) callback({ success: false, error: "Forbidden" });
+          return;
+        }
+
         const incident = incidents.get(data.incidentId);
         if (!incident) {
           if (callback) callback({ success: false, error: "Incident not found" });
@@ -657,6 +662,11 @@ export function setupSocket(
         const user = users.get(socket.id);
         if (!user) {
           if (callback) callback({ success: false, error: "Not authenticated" });
+          return;
+        }
+
+        if (!isDispatch(user) && user.role !== "command") {
+          if (callback) callback({ success: false, error: "Forbidden" });
           return;
         }
 
